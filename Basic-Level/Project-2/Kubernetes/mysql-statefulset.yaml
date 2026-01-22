@@ -33,7 +33,6 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: mysql-storage
-      namespace: default
     spec:
       accessModes:
         - ReadWriteOnce
