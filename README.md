@@ -1,189 +1,50 @@
-# Project 1: Basic Web Server Deployment (Level 1)
-
-This project is part of my DevOps learning journey.  
-The goal of this level is to understand how a **basic web application is deployed** in two ways:
-
-- Directly on a Linux server
-- Inside a Docker container
-
-This project builds the foundation for future containerized, CI/CD, and Kubernetes-based deployments.
+Here’s a clean, professional **Markdown rewrite** with clearer language while keeping your original intent intact:
 
 ---
 
-## Project Objective
+# Hello World!
 
-- Understand how a web server works on a Linux system
-- Learn service management using `systemctl`
-- Get hands-on experience with Docker
-- Compare traditional deployment vs container-based deployment
+This GitHub repository contains multiple folders, each with its own sub-files and a separate `README.md`.
 
----
+## 🎯Mission
 
-## Tech Stack Used
+My mission is an ongoing journey. Through this repository, I aim to create lots of **core, real-world DevOps projects** for engineers who feel a lack of practical, hands-on project experience.
 
-- Linux (RHEL-based)
-- Apache HTTP Server (`httpd`)
-- Docker
-- Shell scripting
+This repository covers:
 
----
+* Application deployments from **scratch**
+* Deployment across **all platforms and approaches**
 
-## Part 1: Web Server Deployment on a Single Linux Instance
+  * Localhost / VM / Server
+  * Docker (Dockerfile → Image → Container)
+  * Kubernetes (K8s) cluster deployments
+* Practical implementations of:
 
-### Step 1: Install Apache Web Server
+  * Basic applications
+  * **2-tier and 3-tier architectures**
+  * Web applications
+  * Chatbots
+  * Database-integrated systems
+  * And many more real-world use cases
 
-```bash
-yum install -y httpd
-````
+The goal is to build a **complete DevOps mindset**, not just theoretical knowledge.
 
----
+## Open for Collaboration
 
-### Step 2: Start the Apache Service
+I invite contributors from around the world to join this mission.
+You are welcome to **contribute, learn, and showcase your work** as part of your professional job portfolio.
 
-```bash
-systemctl start httpd.service
-```
+## About Me
 
----
+I am a DevOps Engineer.
 
-### Step 3: Enable Apache Service on Boot
+* 🔗 LinkedIn: [https://www.linkedin.com/in/rakeshkumarjangid/](https://www.linkedin.com/in/rakeshkumarjangid/)
+* 🌐 Blog Website: https://projectwala.site/
 
-```bash
-systemctl enable httpd.service
-```
+There’s nothing more important to know—this mission is bigger than any individual.
 
----
+## Final Words
 
-### Step 4: Create a Simple Web Page
+Thank you for being here.
+Let’s work together on this mission—focused, practical, and without overthinking unnecessary things.
 
-```bash
-echo "Hello World!" > /var/www/html/index.html
-```
-
----
-
-### Output
-
-* Apache runs directly on the Linux host
-* Web application is accessible via:
-
-```text
-http://<server-ip>:80
-```
-
----
-
-## Part 2: Web Server Deployment Using Docker Container
-
-### Step 1: Install Docker
-
-Docker was installed on **RHEL 9** using the official Docker documentation.
-
-> Reference: [https://docs.docker.com/engine/install/rhel/](https://docs.docker.com/engine/install/rhel/)
-
----
-
-### Step 2: Create Application Files
-
-#### `index.html`
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Basic Web Server</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
-</html>
-```
-
----
-
-### Step 3: Create Dockerfile
-
-```Dockerfile
-FROM httpd:latest
-COPY index.html /usr/local/apache2/htdocs/
-```
-
----
-
-### Step 4: Build Docker Image
-
-```bash
-docker build -t basic-webserver .
-```
-
----
-
-### Step 5: Run the Docker Container
-
-```bash
-docker run -d -p 8080:80 basic-webserver
-```
-
----
-
-### Explanation
-
-* Container port: `80`
-* Host port: `8080`
-* Application accessible via:
-
-```text
-http://<host-ip>:8080
-```
-
----
-
-## Key Learning Outcomes
-
-* Difference between host-based and container-based deployments
-* How Apache serves static content
-* Basics of Dockerfile creation
-* Docker image build and container runtime
-* Port mapping between host and container
-* Why containers improve portability and consistency
-
----
-
-## Common Issues and Troubleshooting
-
-* **Apache not starting**
-
-  * Checked service status using:
-
-    ```bash
-    systemctl status httpd
-    ```
-
-* **Application not accessible**
-
-  * Verified firewall rules
-  * Checked Docker port mapping
-
-* **Content not loading**
-
-  * Verified correct document root path
-
----
-
-## Project Level
-
-* **Level:** Beginner (Level 1)
-* **Focus:** Linux fundamentals, Apache, Docker basics
-
----
-
-## Author
-
-**Rakesh**
-DevOps Learner | Hands-on Practitioner
-
-This project is part of a structured DevOps roadmap where each level builds on the previous one.
-
-
-```
-```
