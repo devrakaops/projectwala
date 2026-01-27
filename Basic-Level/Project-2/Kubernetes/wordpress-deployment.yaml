@@ -18,6 +18,11 @@ spec:
         image: wordpress:latest
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 200m
+          limits:
+            cpu: 500m
         env:
         - name: WORDPRESS_DB_HOST
           value: mysql
